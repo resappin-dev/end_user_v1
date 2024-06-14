@@ -20,3 +20,4 @@ class Kerupuk extends Model
         'updated_at',
     ];
 }
+

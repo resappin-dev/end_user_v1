@@ -759,7 +759,7 @@ ol {
 -----------------------*/
 
 .categories__item {
-	height: 300px;
+	height: 330px;
 	position: relative;
 }
 
@@ -779,9 +779,17 @@ ol {
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	padding: 12px 0 10px;
+	padding: 12px 0 5px;
 	background: #ffffff;
 	display: block;
+}
+
+.categories__item p {
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	background: #ffffff;
 }
 
 .categories__slider .col-lg-3 {
@@ -2064,6 +2072,10 @@ ol {
 .shoping__checkout .primary-btn {
 	display: block;
 	text-align: center;
+}
+
+.mt-2 {
+	margin-top: 20px;
 }
 
 /*---------------------

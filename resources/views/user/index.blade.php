@@ -58,9 +58,13 @@
                             <div class="categories__item set-bg"
                                 data-setbg="{{ asset('template') }}/img/image/mouse-wireless.jpg">
                                 <h5><a href="#">Mouse Wireless</a></h5>
+                             
                                 <!-- <h5><a href="#">{{ $item->nama_barang }}</a></h5> -->
                             </div>
-                          
+                          <div class="categories__item">
+                                <p>130k IDR </p>
+                                <p>Available</p>
+                            </div>
                         </div>
                     <!-- @endforeach -->
                 </div>
