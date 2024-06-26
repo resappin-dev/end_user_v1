@@ -168,12 +168,12 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="{{ url('/') }}"><img src="{{ asset('template') }}/img/logo.png" alt=""></a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('template') }}/img/image/logo_acc.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Address: Graha Raya Bintaro</li>
                             <li>Phone: +62 xxx-xxxx-xxxx</li>
-                            <li>Email: kerupuk@example.com</li>
+                            <li>Email: cs@resappin.com</li>
                         </ul>
                     </div>
                 </div>

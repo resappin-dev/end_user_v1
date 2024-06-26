@@ -39,7 +39,7 @@
                             </div>
                             <div class="hero__search__phone__text">
                                 <h5>+62 xxx-xxxx-xxxx</h5>
-                                <span>support 24/7 time</span>
+                                <span>support 08.00 - 20.00 GMT+8</span>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Featured Product</h2>
+                        <h2>New Products</h2>
                     </div>
                     <div class="featured__controls">
                         <ul>
@@ -242,7 +242,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Latest Products</h4>
+                        <h4>Best Seller Products</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
