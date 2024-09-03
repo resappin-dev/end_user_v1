@@ -56,13 +56,12 @@
                     @foreach ($kerupuk as $item)
                         <div class="col-lg-3">
                             <div class="categories__item set-bg"
-                                data-setbg="{{ asset('template') }}/img/image/".{{ $item->gambar_barang }}>
-                                <h5><a href="#">Mouse Wireless</a></h5>
+                                data-setbg="{{ asset('template') }}/gambar_barang/{{ $item->gambar_barang }}">
                              
                                 <h5><a href="#">{{ $item->nama_barang }}</a></h5>
                             </div>
                           <div class="categories__item">
-                                <p>130k IDR </p>
+                                <p>Rp. {{ $item->harga_jual }},-</p>
                                 <p>Available</p>
                             </div>
                         </div>
