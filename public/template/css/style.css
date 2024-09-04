@@ -868,10 +868,11 @@ ol {
 }
 
 .featured__item__pic {
-	height: 270px;
+	height: 250px;
+	width: 250px;
 	position: relative;
 	overflow: hidden;
-	background-position: center center;
+	/* background-position: center center; */
 }
 
 .featured__item__pic__hover {
