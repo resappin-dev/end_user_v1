@@ -38,7 +38,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
-                                <h5>+62 xxx-xxxx-xxxx</h5>
+                                <h5>+62 815-1392-6712</h5>
                                 <span>support 08.00 - 20.00 GMT+8</span>
                             </div>
                         </div>
@@ -53,20 +53,19 @@
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
-                    <!-- @foreach ($kerupuk as $item) -->
+                    @foreach ($kerupuk as $item)
                         <div class="col-lg-3">
                             <div class="categories__item set-bg"
-                                data-setbg="{{ asset('template') }}/img/image/mouse-wireless.jpg">
-                                <h5><a href="#">Mouse Wireless</a></h5>
+                                data-setbg="{{ asset('template') }}/gambar_barang/{{ $item->gambar_barang }}">
                              
-                                <!-- <h5><a href="#">{{ $item->nama_barang }}</a></h5> -->
+                                <h5><a href="#">{{ $item->nama_barang }}</a></h5>
                             </div>
                           <div class="categories__item">
-                                <p>130k IDR </p>
+                                <p>Rp. {{ $item->harga_jual }},-</p>
                                 <p>Available</p>
                             </div>
                         </div>
-                    <!-- @endforeach -->
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -109,7 +108,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/featured/feature-2.jpg">
+                            data-setbg="{{ asset('template') }}/img/image/mouse/18.PNG">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -117,15 +116,15 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">Mouse Wireless - Black</a></h6>
+                            <h5>90k IDR</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/featured/feature-3.jpg">
+                            data-setbg="{{ asset('template') }}/img/image/keyboard/6.PNG">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -133,8 +132,8 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">Keyboard Wireless - White</a></h6>
+                            <h5>130k IDR</h5>
                         </div>
                     </div>
                 </div>
