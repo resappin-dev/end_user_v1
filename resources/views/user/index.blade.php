@@ -92,7 +92,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/coolingpad/2.jpg">
+                            data-setbg="{{ asset('template') }}/img/image/coolingpad/2_1.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -108,7 +108,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/mouse/18.PNG">
+                            data-setbg="{{ asset('template') }}/img/image/mouse/18_1.PNG">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -124,7 +124,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/keyboard/6.PNG">
+                            data-setbg="{{ asset('template') }}/img/image/keyboard/6_1.JPG">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
