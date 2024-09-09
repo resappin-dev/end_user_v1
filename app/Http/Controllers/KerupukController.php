@@ -35,9 +35,10 @@ class KerupukController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Kerupuk $kerupuk)
+    public function showDetails()
     {
         //
+        return view('user.product-details');
     }
 
     /**

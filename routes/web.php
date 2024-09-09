@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [KerupukController::class, 'index']);
+Route::get('/details-product', [KerupukController::class, 'showDetails']);

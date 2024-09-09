@@ -219,7 +219,7 @@
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text"><p>
-                        PK &copy;<script>document.write(new Date().getFullYear());</script> Apps Penjualan Kerupuk 
+                        &copy;<script>document.write(new Date().getFullYear());</script> Aksesoris Komputer Serpong by RESAPPIN
                         </p></div>
                         <div class="footer__copyright__payment"><img src="{{ asset('template') }}/img/payment-item.png" alt=""></div>
                     </div>

@@ -116,7 +116,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Mouse Wireless - Black</a></h6>
+                            <h6><a href="{{ url('/details-product') }}">Mouse Wireless - Black</a></h6>
                             <h5>90k IDR</h5>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/featured/feature-4.jpg">
+                            data-setbg="{{ asset('template') }}/img/image/headset-speaker/LENOVO_THINKPLUS_TH10_HEADSET_BLUETOOTH_1.png">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -148,15 +148,15 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">LENOVO THINKPLUS TH10 HEADSET BLUETOOTH</a></h6>
+                            <h5>122K IDR</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/featured/feature-5.jpg">
+                            data-setbg="{{ asset('template') }}/img/image/headset-speaker/Vivan.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -164,15 +164,15 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">VIVAN SPEAKER</a></h6>
+                            <h5>90K IDR</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/featured/feature-6.jpg">
+                            data-setbg="{{ asset('template') }}/img/image/coolingpad/chillmate_coolingpad_1.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -180,15 +180,15 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">Chillmate Coolingpad</a></h6>
+                            <h5>115K IDR</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/featured/feature-7.jpg">
+                            data-setbg="{{ asset('template') }}/img/image/keyboard/RPM_Euro_gaming_keyboard.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -196,15 +196,15 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">RPM Euro Gaming Keyboard</a></h6>
+                            <h5>245K IDR</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/featured/feature-8.jpg">
+                            data-setbg="{{ asset('template') }}/img/image/keyboard/Mechanical_Keyboard.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -212,8 +212,8 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="#">Mechanical Keyboard - Wired</a></h6>
+                            <h5>155K IDR</h5>
                         </div>
                     </div>
                 </div>
