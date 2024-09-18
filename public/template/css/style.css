@@ -760,13 +760,14 @@ ol {
 
 .categories__item {
 	height: 330px;
+	width: 320px;
 	position: relative;
 }
 
 .categories__item h5 {
 	position: absolute;
-	left: 0;
-	width: 100%;
+	left: 30;
+	width: 90%;
 	padding: 0 20px;
 	bottom: 20px;
 	text-align: center;
@@ -777,6 +778,7 @@ ol {
 	font-size: 18px;
 	color: #1c1c1c;
 	font-weight: 700;
+	margin-left: 20px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	padding: 12px 0 5px;
@@ -787,6 +789,7 @@ ol {
 .categories__item p {
 	font-size: 16px;
 	font-weight: bold;
+	height: 50px;
 	display: block;
 	text-align: center;
 	background: #ffffff;

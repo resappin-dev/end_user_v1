@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="{{ asset('template') }}/img/image/banner-1.png" style="height: 400px">
+                    <div class="hero__item set-bg" data-setbg="{{ asset('template') }}/img/image/banner-1.png" style="height: 700px">
                     </div>
                 </div>
             </div>
@@ -53,15 +53,15 @@
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
-                    @foreach ($kerupuk as $item)
+                    @foreach ($item as $item)
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg"
-                                data-setbg="{{ asset('template') }}/gambar_barang/{{ $item->gambar_barang }}">
-                             
+                          
+                                <div class="categories__item set-bg"
+                                data-setbg="{{ asset('template') }}/img/image/{{ $item->gambar_barang }}">
                                 <h5><a href="#">{{ $item->nama_barang }}</a></h5>
                             </div>
                           <div class="categories__item">
-                                <p>Rp. {{ $item->harga_jual }},-</p>
+                                <p>Rp. {{ $item->main_harga_jual }},-</p>
                                 <p>Available</p>
                             </div>
                         </div>
@@ -236,7 +236,7 @@
             </div>
         </div>
     </div>
-    <section class="latest-product spad">
+    <!-- <section class="latest-product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -436,7 +436,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
     {{-- <section class="from-blog spad">
         <div class="container">
             <div class="row">

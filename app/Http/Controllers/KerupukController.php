@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Kerupuk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class KerupukController extends Controller
 {
@@ -12,8 +14,12 @@ class KerupukController extends Controller
      */
     public function index()
     {
-        $kerupuk = Kerupuk::get();
-        return view('user.index', compact('kerupuk'));
+       // $kerupuk = Kerupuk::get();
+
+       $item = DB::table('master_barang_v1')
+            ->where('created_user_id', '5')->get();
+
+        return view('user.index', compact('item'));
     }
 
     /**
