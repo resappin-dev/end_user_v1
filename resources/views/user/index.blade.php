@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg" data-setbg="{{ asset('template') }}/img/image/banner-1.png" style="height: 700px">
+                    <div class="hero__item set-bg" data-setbg="{{ asset('template') }}/img/image/banner-1.png" style="height: 400px; width:400px">
                     </div>
                 </div>
             </div>

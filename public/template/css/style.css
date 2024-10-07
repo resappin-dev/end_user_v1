@@ -759,8 +759,9 @@ ol {
 -----------------------*/
 
 .categories__item {
-	height: 330px;
-	width: 320px;
+	height: 200px;
+	width: 210px;
+	padding:10px;
 	position: relative;
 }
 
@@ -775,7 +776,7 @@ ol {
 }
 
 .categories__item h5 a {
-	font-size: 18px;
+	font-size: 13px;
 	color: #1c1c1c;
 	font-weight: 700;
 	margin-left: 20px;

@@ -123,7 +123,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="{{ url('/') }}"><img src="{{ asset('template') }}/img/image/logo_acc.png" alt=""></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('template') }}/img/image/logo_acc.png" alt="" style="height: 125px; width:200px"></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
