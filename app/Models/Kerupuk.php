@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Kerupuk extends Model
 {
     use HasFactory;
     protected $table = "master_barang_v1";
-    protected $primaryKey = 'kerupukID';
+    protected $primaryKey = 'id_barang';
     protected $fillable = [
         'nama_barang',
         'stok',
@@ -19,5 +20,10 @@ class Kerupuk extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function getSlugAttribute()
+    {
+        return Str::slug($this->nama_barang);
+    }
 }
 

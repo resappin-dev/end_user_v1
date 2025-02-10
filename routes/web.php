@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [KerupukController::class, 'index']);
-Route::get('/details-product', [KerupukController::class, 'showDetails']);
+Route::get('/details-product/{id}', [KerupukController::class, 'showDetails'])->name('details-product');
+Route::post('/store-review', [KerupukController::class, 'store'])->name('store-review');

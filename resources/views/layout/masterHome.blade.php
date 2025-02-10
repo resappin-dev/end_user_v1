@@ -19,6 +19,14 @@
     <link rel="stylesheet" href="{{ asset('template') }}/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="{{ asset('template') }}/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="{{ asset('template') }}/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <style>
+        .swal2-popup .nice-select {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -162,6 +170,30 @@
 {{-- Konten --}}
     @yield('konten-first')
 {{-- End Konten --}}
+        @if (Session::has('success'))
+            <script>
+                console.log('Success')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: '{{ Session::get('success') }}',
+                    showConfirmButton: false,
+                });
+            </script>
+        @elseif($errors->any())
+            <script>
+                console.log('Error')
+                var errorMessage = @json($errors->all());
+                var formattedErrorMessage = errorMessage.join(' & ');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: formattedErrorMessage,
+                    showConfirmButton: false,
+                });
+            </script>
+        @endif
+
     <footer class="footer spad">
         <div class="container">
             <div class="row">
@@ -235,8 +267,6 @@
     <script src="{{ asset('template') }}/js/mixitup.min.js"></script>
     <script src="{{ asset('template') }}/js/owl.carousel.min.js"></script>
     <script src="{{ asset('template') }}/js/main.js"></script>
-
-
 
 </body>
 

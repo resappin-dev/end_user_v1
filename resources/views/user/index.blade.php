@@ -1,6 +1,7 @@
 @extends('layout.masterHome')
 @section('konten-first')
-    <section class="hero">
+{{-- Hero Section --}}
+    <section class="hero hero-normal">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -10,19 +11,14 @@
                             <span>Our Products</span>
                         </div>
                         <ul>
-                            <li><a href="#">Keyboard</a></li>
-                            <li><a href="#">Mouse</a></li>
-                            <li><a href="#">Keyboard Gaming</a></li>
-                            <li><a href="#">Mouse Wireless</a></li>
-                            <li><a href="#">Mouse Gaming</a></li>
-                            <li><a href="#">Cable Data</a></li>
-                            <li><a href="#">Powerbank</a></li>
-                            <li><a href="#">Others Accesories</a></li>
+                            @foreach ($categories as $category)
+                                <li><a href="#">{{ $category->kategori }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <div class="hero__search">
+                    <div class="hero__search mb-4">
                         <div class="hero__search__form">
                             <form action="#">
                                 <div class="hero__search__categories">
@@ -33,7 +29,7 @@
                                 <button type="submit" class="site-btn">SEARCH</button>
                             </form>
                         </div>
-                        <div class="hero__search__phone">
+                        <div class="hero__search__phone" style="margin-right: -2em;">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
                             </div>
@@ -49,27 +45,65 @@
             </div>
         </div>
     </section>
+
     <section class="categories">
         <div class="container">
             <div class="row">
-                <div class="categories__slider owl-carousel">
-                    @foreach ($item as $item)
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Top Rated Products</h2>
+                    </div>
+                </div>
+            <div class="categories__slider owl-carousel">
+                @if($highReviewProducts->count() > 0)
+                    @foreach ($highReviewProducts as $product)
                         <div class="col-lg-3">
-                          
-                                <div class="categories__item set-bg"
-                                data-setbg="{{ asset('template') }}/img/image/{{ $item->gambar_barang }}">
-                                <h5><a href="#">{{ $item->nama_barang }}</a></h5>
-                            </div>
-                          <div class="categories__item">
-                                <p>Rp. {{ $item->main_harga_jual }},-</p>
-                                <p>Available</p>
+                            <div class="featured__item">
+                                <div class="featured__item__pic set-bg" data-setbg="{{ asset('template') . "/" . $product->gambar_barang }}">
+                                    <ul class="featured__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="featured__item__text">
+                                    <h6><a
+                                            href="{{ route('details-product', ['id' => $product->id_barang]) }}">{{ $product->nama_barang }}</a>
+                                    </h6>
+                                    <h5>Rp {{ number_format($product->main_harga_jual, 0, ',', '.') }}</h5>
+                                    @if(!$product->main_stok > 0)
+                                        <span class="text-danger">Out of Stock</span>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     @endforeach
-                </div>
+                @else
+                    @foreach ($items as $item)
+                        <div class="col-lg-3">
+                            <div class="featured__item">
+                                <div class="featured__item__pic set-bg" data-setbg="{{ asset('template') . "/" . $item->gambar_barang }}">
+                                    <ul class="featured__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="featured__item__text">
+                                    <h6><a href="{{ route('details-product', ['id' => $item->id_barang]) }}">{{ $item->nama_barang }}</a>
+                                    </h6>
+                                    <h5>Rp {{ number_format($item->main_harga_jual, 0, ',', '.') }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
             </div>
         </div>
     </section>
+
+
     <section class="featured spad">
         <div class="container">
             <div class="row">
@@ -80,147 +114,57 @@
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Keyboard Gaming</li>
+                            @foreach ($categories as $category)
+                                <li data-filter=".{{ $category->kategori }}">{{ $category->kategori }}</li>
+                            @endforeach
+                            {{-- <li data-filter=".oranges">Keyboard Gaming</li>
                             <li data-filter=".fresh-meat">Mouse Gaming</li>
                             <li data-filter=".vegetables">Mouse Wireless</li>
-                            <li data-filter=".fastfood">Headphone / Earphone</li>
+                            <li data-filter=".fastfood">Headphone / Earphone</li> --}}
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="row featured__filter">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/coolingpad/2_1.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
+                <div id="products-container">
+                    @if($items->count() > 0)
+                        <div class="row featured__filter">
+                            @foreach($items as $item)
+                                <div class="col-lg-3 col-md-4 col-sm-6 mix {{ $item->kategori }}">
+                                    <div class="featured__item">
+                                        <div class="featured__item__pic set-bg" data-setbg="{{ asset('template') . "/" . $item->gambar_barang }}">
+                                            <ul class="featured__item__pic__hover">
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="featured__item__text">
+                                            <h6><a
+                                                    href="{{ route('details-product', ['id' => $item->id_barang]) }}">{{ $item->nama_barang }}</a>
+                                            </h6>
+                                            <h5>Rp {{ number_format($item->main_harga_jual, 0, ',', '.') }}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Cooling Pad</a></h6>
-                            <h5>35k IDR</h5>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-center mt-4">
+                                    {{ $items->links('pagination::bootstrap-4', ['class' => 'pagination-success']) }}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/mouse/18_1.PNG">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
+                    @else
+                        <div class="text-center py-4">
+                            <p class="text-muted">No products available at the moment.</p>
                         </div>
-                        <div class="featured__item__text">
-                            <h6><a href="{{ url('/details-product') }}">Mouse Wireless - Black</a></h6>
-                            <h5>90k IDR</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/keyboard/6_1.JPG">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Keyboard Wireless - White</a></h6>
-                            <h5>130k IDR</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/headset-speaker/LENOVO_THINKPLUS_TH10_HEADSET_BLUETOOTH_1.png">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">LENOVO THINKPLUS TH10 HEADSET BLUETOOTH</a></h6>
-                            <h5>122K IDR</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/headset-speaker/Vivan.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">VIVAN SPEAKER</a></h6>
-                            <h5>90K IDR</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/coolingpad/chillmate_coolingpad_1.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Chillmate Coolingpad</a></h6>
-                            <h5>115K IDR</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/keyboard/RPM_Euro_gaming_keyboard.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">RPM Euro Gaming Keyboard</a></h6>
-                            <h5>245K IDR</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg"
-                            data-setbg="{{ asset('template') }}/img/image/keyboard/Mechanical_Keyboard.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="#">Mechanical Keyboard - Wired</a></h6>
-                            <h5>155K IDR</h5>
-                        </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>
     </section>
-    <div class="banner">
+    
+    {{-- <div class="banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -235,7 +179,35 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
+    <script>
+        $(document).ready(function () {
+            $(document).on('click', '.pagination a', function (e) {
+                e.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                fetchProducts(page);
+            });
+            function fetchProducts(page) {
+                $.ajax({
+                    url: window.location.pathname + '?page=' + page,
+                    success: function (response) {
+                        $('#products-container').html($(response).find('#products-container').html());
+                        $('.set-bg').each(function () {
+                            var bg = $(this).data('setbg');
+                            $(this).css('background-image', 'url(' + bg + ')');
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+@endsection
+    
+
     <!-- <section class="latest-product spad">
         <div class="container">
             <div class="row">
@@ -496,4 +468,3 @@
             </div>
         </div>
     </section> --}}
-@endsection
