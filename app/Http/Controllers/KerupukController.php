@@ -25,10 +25,10 @@ class KerupukController extends Controller
                 'master_barang_v1.main_stok',
                 'master_barang_v1.gambar_barang',
                 'kategori_barang.kategori',
-                )
-                ->leftJoin('product_category', 'master_barang_v1.id_barang', '=', 'product_category.barang_id')
-                ->leftJoin('kategori_barang', 'product_category.category_id', '=', 'kategori_barang.id')
-                ->paginate(12);
+            )
+            ->leftJoin('product_category', 'master_barang_v1.id_barang', '=', 'product_category.barang_id')
+            ->leftJoin('kategori_barang', 'product_category.category_id', '=', 'kategori_barang.id')
+            ->paginate(12);
 
         // dd($items);
 
@@ -85,6 +85,17 @@ class KerupukController extends Controller
             ->orderBy('avg_rating', 'desc')
             ->limit(5)
             ->get();
+
+        if($highReviewProducts->count() < 5) {
+            $existingIds = $highReviewProducts->pluck('id_barang')->toArray();
+            $regularProducts = DB::table('master_barang_v1')
+                ->whereNotIn('id_barang', $existingIds)
+                ->limit(5 - $highReviewProducts->count())
+                ->get();
+
+            $highReviewProducts = $highReviewProducts->concat($regularProducts);
+        }
+        // dd($items);
 
         $categories = DB::table('kategori_barang')
             ->select('id', 'kategori')
