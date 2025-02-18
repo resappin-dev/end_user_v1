@@ -81,11 +81,10 @@ class KerupukController extends Controller
                 'master_barang_v1.main_stok', 
                 'master_barang_v1.gambar_barang'
             )
-            ->having('review_count', '>', 0)
-            ->orderBy('avg_rating', 'desc')
-            ->limit(5)
+         //   ->having('review_count', '>', 0)
+         //   ->orderBy('avg_rating', 'desc')
+           // ->limit(5)
             ->get();
-
         if($highReviewProducts->count() < 5) {
             $existingIds = $highReviewProducts->pluck('id_barang')->toArray();
             $regularProducts = DB::table('master_barang_v1')

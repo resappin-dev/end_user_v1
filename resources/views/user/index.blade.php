@@ -60,7 +60,7 @@
                                                     <div class="col-lg-3">
                                                         <div class="featured__item">
                                                             <div class="featured__item__pic set-bg" 
-                                                            data-setbg="{{ asset('template/img/image/' . $product->gambar_barang) }}">
+                                                            data-setbg="{{ asset('template/gambar_barang/' . $product->gambar_barang) }}">
                                                                 <ul class="featured__item__pic__hover">
                                                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
