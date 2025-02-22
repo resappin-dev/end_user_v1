@@ -57,7 +57,7 @@
                 </ul>
             </div> --}}
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="{{ url('/login') }}"><i class="fa fa-user"></i>Login</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -120,7 +120,11 @@
                                 </ul>
                             </div> --}}
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                @if(Auth::check())
+                                <a href="/logout"><i class="fa fa-user"></i> Logout</a>
+                                @else
+                                    <a href="/login"><i class="fa fa-user"></i> Login</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -267,6 +271,7 @@
     <script src="{{ asset('template') }}/js/mixitup.min.js"></script>
     <script src="{{ asset('template') }}/js/owl.carousel.min.js"></script>
     <script src="{{ asset('template') }}/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 

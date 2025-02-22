@@ -6,6 +6,7 @@ use App\Models\Kerupuk;
 use App\Models\ReviewProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class KerupukController extends Controller
@@ -124,14 +125,14 @@ class KerupukController extends Controller
             'product_id' => 'required|exists:master_barang_v1,id_barang',
             'star' => 'required|integer|between:1,5',
             'comment' => 'required|string|max:250',
-            'username' => 'required|string|max:255',
+            // 'username' => 'required|string|max:255',
         ]);
 
         // Check for duplicate review
         $existingReview = DB::table('review_product')
             ->where('product_id', $request->product_id)
-            // ->where('created_by', auth()->user()->id)
-            ->where('created_by', $request->username)
+            ->where('created_by', Auth::user()->id)
+            // ->where('created_by', $request->username)
             ->first();
 
         if($existingReview) {
@@ -144,8 +145,8 @@ class KerupukController extends Controller
             'star' => $request->star,
             'comment' => $request->comment,
             'created_date' => now(),
-            // 'created_by' => auth()->user()->name
-            'created_by' => $request->username
+            'created_by' => Auth::user()->id
+            // 'created_by' => $request->username
         ]);
         
         return redirect()->back()->with('success', 'Review added successfully!');
@@ -181,10 +182,13 @@ class KerupukController extends Controller
         
 
         $reviews = DB::table('review_product')
-            ->select('review_product.*')
+            ->join('customers', 'review_product.created_by', '=', 'customers.id')
+            ->select('review_product.*', 'customers.username')
             ->where('product_id', $id)
             ->orderBy('created_date', 'desc')
             ->paginate(3);
+
+        // dd($reviews);
 
         $relatedProducts = DB::table('master_barang_v1')
             ->select([

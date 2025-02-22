@@ -1,0 +1,199 @@
+@font-face {
+    font-family: "boldJosefin"; /* Name your font family */
+    src: url("JosefinSans-Bold.ttf"); /* Locate the .ttf file within your directory*/
+    /*font/JosefinSans-Bold.ttf */
+}
+
+@font-face {
+    font-family: "regJosefin"; /* Name your font family */
+    src: url("JosefinSans-Regular.ttf"); /* Locate the .ttf file within your directory*/
+    /*font/JosefinSans-Bold.ttf */
+}
+
+@font-face {
+    font-family: "lightJosefin"; /* Name your font family */
+    src: url("JosefinSans-Light.ttf"); /* Locate the .ttf file within your directory*/
+    /*font/JosefinSans-Bold.ttf */
+}
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: -2; */
+    /* max-width: calc(100% - 20px); */
+    height: 100vh;
+}
+
+.container-verify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: -2; */
+    /* max-width: calc(100% - 20px); */
+    height: 100vh;
+}
+
+.form-container {
+    /* width: 40%;
+    height: 80%; */
+    width: 450px;
+    height: 500px;
+    display: flex;
+    max-width: calc(100% - 20px);
+    flex-direction: column;
+    padding: 45px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 248, 248);
+    opacity: 0.95;
+}
+
+.form-container-reg {
+    /* width: 40%;
+    height: 80%; */
+    width: 450px;
+    height: 550px;
+    display: flex;
+    max-width: calc(100% - 20px);
+    flex-direction: column;
+    padding: 45px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 248, 248);
+    opacity: 0.95;
+}
+
+.form-container-verify {
+    /* width: 40%;
+    height: 80%; */
+    width: 450px;
+    height: 350px;
+    display: flex;
+    max-width: calc(100% - 20px);
+    flex-direction: column;
+    padding: 45px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 248, 248);
+    opacity: 0.95;
+}
+
+.form-container-forgot {
+    /* width: 40%;
+    height: 80%; */
+    width: 450px;
+    height: 200px;
+    display: flex;
+    max-width: calc(100% - 20px);
+    flex-direction: column;
+    padding: 45px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 248, 248);
+    opacity: 0.95;
+}
+
+.login-wrapper {
+    display: flex;
+    width: 80%;
+    height: 70%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+input[type="text"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+input[type="password"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.form button {
+    font-family: boldJosefin, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #3033ea;
+    width: 60%;
+    border: 0;
+    padding: 5px;
+    color: #222121;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form-forgot button {
+    font-family: boldJosefin, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #484bf5;
+    width: 60%;
+    border: 0;
+    padding: 5px;
+    color: #222121;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: #7a7cf4;
+    color: #d3d3d3;
+}
+
+.form-forgot button:hover,
+.form-forgot button:active,
+.form-forgot button:focus {
+    background: #7a7cf4;
+    color: #d3d3d3;
+}
+
+.regis-text {
+    font-size: 1em;
+    margin-top: -5px;
+    width: 320px;
+}
+
+.regis a {
+    color: #3033ea;
+}
+
+.forgot-text {
+    text-align: right;
+    color: red;
+    font-size: 1em;
+    margin-top: 13px;
+}
+
+.form-reg button {
+    font-family: boldJosefin, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #3033ea;
+    width: 120%;
+    border: 0;
+    padding: 5px;
+    color: #222121;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form-reg button:hover,
+.form-reg button:active,
+.form-reg button:focus {
+    background: #7a7cf4;
+    color: #d3d3d3;
+}
