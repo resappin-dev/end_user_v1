@@ -58,7 +58,7 @@
     <div class="texture-bg"></div>
     <div class="container">
         <img src="{{ $message->embed(public_path('template/img/image/logo_acc.png')) }}" style="width: 200px; height:150px"
-            alt="Logo" />p
+            alt="Logo" />
         <h1>Welcome to RESAPPIN</h1>
         <p>Hello {{ $customer->name }},</p>
         <p>Thank you for registering. Please click on the following link to verify your email:</p>
