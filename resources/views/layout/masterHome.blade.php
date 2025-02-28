@@ -121,7 +121,15 @@
                             </div> --}}
                             <div class="header__top__right__auth">
                                 @if(Auth::check())
-                                <a href="/logout"><i class="fa fa-user"></i> Logout</a>
+                                <div class="d-flex flex-column align-items-center p-3">
+                                    <span class="me-3 bg-white px-3 py-1">
+                                        <strong>Hi, {{ Auth::user()->name }}</strong>
+                                    </span>
+                                    <span class="me-3">
+                                        <a href="/logout" class="small pt-1"><i class="fa fa-user"></i>Logout</a>
+                                    </span>
+                                </div>
+                                {{-- <a href="/logout"><i class="fa fa-user"></i> Logout</a> --}}
                                 @else
                                     <a href="/login"><i class="fa fa-user"></i> Login</a>
                                 @endif
